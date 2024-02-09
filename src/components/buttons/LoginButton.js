@@ -1,6 +1,7 @@
 import React from 'react';
-import { LuUser } from "react-icons/lu";
+import { LuUser } from 'react-icons/lu';
 
+// LoginButton component represents a button for user login
 const LoginButton = () => {
   return (
     <button className='w-24 h-10 bg-purple text-sm text-white font-bold rounded flex items-center justify-center'>
@@ -10,4 +11,4 @@ const LoginButton = () => {
   );
 };
 
-export default LoginButton
+export default LoginButton;

@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from './components/navigation/NavBar';
 import TitleBanner from './components/TitleBanner';
 import MovieList from './components/MovieList';
-import ListIcon from './components/ListIcon';
+import BottomBanner from './components/footer/BottomBanner';
+import Footer from './components/footer/Footer';
 
-function App() {
+const App = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <div>
-      <NavBar/>
+      <NavBar setSearchTerm={setSearchTerm} />
       <TitleBanner />
-      <ListIcon />
-      <MovieList/>
+      <MovieList searchTerm={searchTerm} />
+      <BottomBanner/>
+      <Footer/>
     </div>
   );
 }

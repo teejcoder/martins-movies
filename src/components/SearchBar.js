@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { IoSearch } from "react-icons/io5";
 
-const SearchBar = () => {
+// SearchBar component for searching movies
+const SearchBar = ({ setSearchTerm }) => {
+  const [searchText, setSearchText] = useState('');
+
+  // Handle input change event
+  const handleInputChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    setSearchTerm(searchText);
+  };
+
   return (
-    <div className='h-16 w-full bg-white flex items-center justify-between'>
-        <input type="text" placeholder="Search by keyword" className="w-screen h-16 px-2 py-1 z-50 rounded-md focus:outline-none focus:border-blue-500" />
+    // Form container
+    <form className='flex' onSubmit={handleSubmit}> {/* Add onSubmit handler to the form */}
+      {/* Input field for search */}
+      <input 
+        type="text" 
+        placeholder="Search by keyword" 
+        value={searchText}
+        onChange={handleInputChange}
+        className="relative sh-16 z-50 rounded-md focus:outline-none focus:border-blue-500"
+      />
+      {/* Search button */}
+      <button type="submit"> {/* Change button type to submit */}
+        <IoSearch size={18} />
+      </button>
+    </form>
+  );
+};
 
-        <p>X</p>
-    </div>
-  )
-}
-
-export default SearchBar
+export default SearchBar;
