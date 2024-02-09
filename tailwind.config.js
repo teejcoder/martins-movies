@@ -11,6 +11,7 @@ module.exports = {
         title: '#3E4555',
         white: '#FFFFFF',
         purple: '#9352B3',
+        green: '#8AC926',
       },
       fontSize: {
         title: '16px'

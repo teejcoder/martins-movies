@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const MoreInfoButton = () => {
+const MoreInfoButton = ({ imdbLink }) => {
   return (
-    <button className='w-24 h-8 bg-purple text-sm text-white font-bold rounded flex items-center justify-center'>
+    <a href={imdbLink} target="_blank" rel="noopener noreferrer" className='w-24 h-8 bg-purple text-sm text-white font-bold rounded flex items-center justify-center'>
         <p>MORE INFO</p>
-    </button>
-  )
-}
+    </a>
+  );
+};
 
 export default MoreInfoButton;

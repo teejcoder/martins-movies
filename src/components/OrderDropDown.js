@@ -8,7 +8,7 @@ const OrderDropDown = () => {
     };
 
   return (
-    <div className='h-14 w-1/5 border rounded-l p-4 bg-white'>
+    <div className='h-12 w-60 flex items-center  border rounded-l p-4 bg-white'>
         <select id='dropdown' value={selectedOption} onChange={handleSelectChange}>
             <option value="Default Order">Default Order</option>
             <option value="Featured">Featured</option>
