@@ -66,6 +66,7 @@ const MovieComponent = ({ movie }) => {
         <div className='flex items-center justify-between'>
 
         {movie.imdb_id && <MoreInfoButton imdbLink={`https://www.imdb.com/title/${movie.imdb_id}`} />}
+        
           <button
             className={`w-24 h-8 bg-green text-sm text-white font-bold rounded flex items-center justify-center ${
               isWatched ? 'bg-green' : 'bg-purple'

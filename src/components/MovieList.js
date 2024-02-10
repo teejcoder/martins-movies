@@ -45,9 +45,19 @@ const MovieList = ({ searchTerm }) => {
 
   // Function to fetch IMDb ID for each movie
   const fetchIMDbIDs = async (movies) => {
-    // Implementation for fetching IMDb IDs
+    const updatedMovies = [];
+    for (const movie of movies) {
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/external_ids?api_key=${api_key}`);
+        const data = await response.json();
+        movie.imdb_id = data.imdb_id;
+        updatedMovies.push(movie);
+      } catch (error) {
+        console.error(`Error fetching IMDb ID for movie ${movie.id}:`, error);
+      }
+    }
+    setMovies(updatedMovies);
   };
-
   // Logic to calculate the index of the first and last movie on the current page
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
