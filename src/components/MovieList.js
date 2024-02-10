@@ -22,6 +22,18 @@ const MovieList = ({ searchTerm }) => {
       }
     };
 
+    // Function to fetch most popular movies
+    const getPopularMovies = async () => {
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${currentPage}`);
+        const data = await response.json();
+        setMovies(data.results);
+        fetchIMDbIDs(data.results);
+      } catch (error) {
+        console.error('Error fetching popular movies:', error);
+      }
+    };
+
     // Fetch movies when the search term changes
     if (searchTerm.trim() !== '') {
       getMoviesByKeyword();
@@ -29,19 +41,7 @@ const MovieList = ({ searchTerm }) => {
       // If search term is empty, fetch most popular movies
       getPopularMovies();
     }
-  }, [searchTerm]); // Include searchTerm in the dependency array
-
-  // Function to fetch most popular movies
-  const getPopularMovies = async () => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${currentPage}`);
-      const data = await response.json();
-      setMovies(data.results);
-      fetchIMDbIDs(data.results);
-    } catch (error) {
-      console.error('Error fetching popular movies:', error);
-    }
-  };
+  }, [searchTerm, currentPage]); // Include currentPage in the dependency array
 
   // Function to fetch IMDb ID for each movie
   const fetchIMDbIDs = async (movies) => {
@@ -58,6 +58,7 @@ const MovieList = ({ searchTerm }) => {
     }
     setMovies(updatedMovies);
   };
+
   // Logic to calculate the index of the first and last movie on the current page
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
