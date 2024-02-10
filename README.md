@@ -2,8 +2,6 @@
 
 **Link to project:** [Martin's Movies](https://martins-movies.netlify.app/)
 
-![Martin's Movies](https://ibb.co/SNxCyN6)
-
 ## Project Overview:
 
 Martin's Movies is a web application that allows users to search for movies and view information about them. The application fetches data from the TMDB API to provide movie details such as title, release date, and poster image.
