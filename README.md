@@ -1,6 +1,6 @@
 # Martin's Movies
 
-**Link to project:** [Martin's Movies](https://martins-movies.netlify.app/)
+**Link to project:** [Martin's Movies](https://martins-movie-reviews.netlify.app/)
 
 ## Project Overview:
 
