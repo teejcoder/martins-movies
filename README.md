@@ -2,13 +2,11 @@
 
 **Link to project:** [Martin's Movies](https://martins-movies.netlify.app/)
 
-![Martin's Movies](https://ibb.co/SNxCyN6)
-
 ## Project Overview:
 
 Martin's Movies is a web application that allows users to search for movies and view information about them. The application fetches data from the TMDB API to provide movie details such as title, release date, and poster image.
 
-To visit click the link above, to join in clone this repo and start the engine with `npm install` / `yarn install`. Turn the key with `npm start` / `yarn start`.
+To visit the project, click the link provided above. To contribute, clone this repository and start the engine with `npm install` or `yarn install`. Ensure to obtain an API key from the TMDB API and include it in the project's environment configuration.
 
 ## How It Works:
 
