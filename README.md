@@ -1,6 +1,8 @@
 # Martin's Movies
 
-**Link to project:** [Martin's Movies](https://martins-movies.netlify.app/)
+**Link to project:** [Martin's Movies](https://martins-movie-reviews.netlify.app/)
+
+![Martin's Movies Gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTVxZWMzY3hsa2t1aGVpcDFqYWw2bXVzcjVucHFmdWxpNGl5Zms5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dPH8sAzA2lpPXyXLCx/giphy-downsized-large.gif)
 
 ## Project Overview:
 
