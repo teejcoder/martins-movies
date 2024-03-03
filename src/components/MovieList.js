@@ -2,21 +2,24 @@ import React, { useState, useEffect } from 'react';
 import MovieComponent from './MovieComponent';
 import ListIcon from './ListIcon';
 
+const moviesPerPage = 6;
+const api_key = process.env.REACT_APP_TMDB_API_KEY;
+// const url = "https://api.themoviedb.org/3/";
+
 const MovieList = ({ searchTerm }) => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const moviesPerPage = 6;
-  const api_key = process.env.REACT_APP_TMDB_API_KEY;
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+  
     // Function to fetch movies based on the search term
     const getMoviesByKeyword = async () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchTerm}&page=1`);
         const data = await response.json();
         setMovies(data.results);
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
         console.error('Error fetching movies by keyword:', error);
       }

@@ -6,6 +6,7 @@ import MoreInfoButton from './buttons/MoreInfoButton';
 const MovieComponent = ({ movie }) => {
   const [isWatched, setIsWatched] = useState(false);
 
+  // hook to set isWatched state in local storage
   useEffect(() => {
     const watchedStatus = localStorage.getItem(`watched_${movie.id}`);
     if (watchedStatus !== null) {
@@ -29,14 +30,18 @@ const MovieComponent = ({ movie }) => {
   const truncatedOverview = movieOverview.length > 100 ? `${movieOverview.substring(0, 100)}...` : movieOverview;
 
   return (
-    <div className='h-full w-fit m-1 rounded overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-2'>
+    <div className='h-full w-full m-1 rounded overflow-hidden flex flex-col transition duration-300 transform hover:-translate-y-2'>
       
       {/* Movie image half */}
-      {backdrop_path && (
-        <div className='flex-1 relative'>
+      <div className='w-full h-full flex-1 relative bg-gray-300'>
+        {imageUrl ? (
           <img src={imageUrl} alt='Movie Poster' className='w-full h-full object-cover' />
-        </div>
-      )}
+        ) : (
+          <div className="w-full h-full flex justify-center items-center">
+            <span className="text-gray-500">Placeholder Image</span>
+          </div>
+        )}
+      </div>
 
       {/* Movie description half */}
       <div className='pl-6 pr-6 pb-6 flex-1 bg-white relative'>
