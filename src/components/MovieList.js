@@ -63,7 +63,7 @@ const MovieList = ({ searchTerm }) => {
   // Logic to calculate the index of the first and last movie on the current page
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
-  const currentMovies = movies.slice([indexOfFirstMovie], [indexOfLastMovie]);
+  const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
 
   // Logic to paginate
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
