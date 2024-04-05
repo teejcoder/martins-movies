@@ -4,6 +4,8 @@
 
 ![Martin's Movies Gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTVxZWMzY3hsa2t1aGVpcDFqYWw2bXVzcjVucHFmdWxpNGl5Zms5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dPH8sAzA2lpPXyXLCx/giphy-downsized-large.gif)
 
+If there are any problems loading Martin's Movies please disable Ghostery/Extensions
+
 ## Project Overview:
 
 Martin's Movies is a web application that allows users to search for movies and view information about them. The application fetches data from the TMDB API to provide movie details such as title, release date, and poster image.
