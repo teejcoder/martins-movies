@@ -25,11 +25,9 @@ const SearchBar = ({ setSearchTerm }) => {
         placeholder="Search by keyword" 
         value={searchText}
         onChange={handleInputChange}
-        // onChange={(e) => {setSearchText(e.target.value)}}
         className="relative sh-16 z-50 rounded-md focus:outline-none focus:border-blue-500"
       />
-      {/* Search button */}
-      <button type="submit"> {/* Change button type to submit */}
+      <button type="submit">
         <IoSearch size={18} />
       </button>
     </form>

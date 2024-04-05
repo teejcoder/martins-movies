@@ -1,6 +1,5 @@
 import React from 'react';
 
-// TitleBanner component for displaying the title banner section
 const TitleBanner = () => {
   return (
     // Section container with background image and overlay

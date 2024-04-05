@@ -4,12 +4,10 @@ import ListIcon from './ListIcon';
 
 const moviesPerPage = 6;
 const api_key = process.env.REACT_APP_TMDB_API_KEY;
-// const url = "https://api.themoviedb.org/3/";
 
 const MovieList = ({ searchTerm }) => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
   
@@ -65,7 +63,7 @@ const MovieList = ({ searchTerm }) => {
   // Logic to calculate the index of the first and last movie on the current page
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
-  const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
+  const currentMovies = movies.slice([indexOfFirstMovie], [indexOfLastMovie]);
 
   // Logic to paginate
   const paginate = (pageNumber) => setCurrentPage(pageNumber);

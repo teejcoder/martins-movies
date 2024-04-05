@@ -8,7 +8,6 @@ import SearchBar from '../SearchBar';
 const NavBar = ({ setSearchTerm }) => {
   // State variables for mobile responsiveness and search/menu toggles
   const [isMobile, setIsMobile] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // useEffect hook for handling window resize events
@@ -17,7 +16,6 @@ const NavBar = ({ setSearchTerm }) => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1200);
     };
-    // Initial call to handleResize to set isMobile state
     handleResize();
     // Event listener for window resize
     window.addEventListener('resize', handleResize);
@@ -27,12 +25,6 @@ const NavBar = ({ setSearchTerm }) => {
     };
   }, []);
 
-  // Function to toggle search bar visibility
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
-  // Function to toggle menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -47,10 +39,8 @@ const NavBar = ({ setSearchTerm }) => {
 
       {/* Conditional rendering for mobile */}
       {isMobile ? (
-        // Display hamburger menu icon and toggle search bar
         <div className='flex items-center'>
           <GiHamburgerMenu className='mr-8' size={38} onClick={toggleMenu} />
-          {/* Conditional rendering for menu popup */}
           {isMenuOpen && (
             <div className="menu-popup">
               <SearchBar setSearchTerm={setSearchTerm} />
@@ -58,7 +48,6 @@ const NavBar = ({ setSearchTerm }) => {
           )}
         </div>
       ) : (
-        // Display navigation and search bar icons
         <>
           <Navigation />
           <NavbarIcons setSearchTerm={setSearchTerm} />

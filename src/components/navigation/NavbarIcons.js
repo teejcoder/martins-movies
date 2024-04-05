@@ -6,8 +6,8 @@ import SearchBar from '../SearchBar';
 // NavbarIcons component representing icons in the navigation bar.
 const NavbarIcons = ({ setSearchTerm }) => {
   return (
-    // Container for navigation bar icons
     <div className='flex items-center'>
+      
       {/* Search Bar */}
       <div className='pl-4 pr-4 relative'>
         <SearchBar setSearchTerm={setSearchTerm} />
